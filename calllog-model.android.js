@@ -17,6 +17,7 @@ var CallLog = (function (_super) {
         this.type = mainCursorJson[CallLogs.TYPE];
         this.date = mainCursorJson[CallLogs.DATE];
         this.duration = mainCursorJson[CallLogs.DURATION];
+        this.name = mainCursorJson[CallLogs.CACHED_NAME];
         this.contactid = mainCursorJson[CallLogs.CONTACTID];
     };
 

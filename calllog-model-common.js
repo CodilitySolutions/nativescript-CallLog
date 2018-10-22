@@ -4,6 +4,7 @@ var CallLog = (function () {
         this.type = "";
         this.date = "";
         this.duration = "";
+        this.name = "";
         this.contactid = "";
     }
 
