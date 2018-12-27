@@ -3,32 +3,6 @@ var CallLog = require("./calllog-model");
 var Type = require("./call-types");
 var ContactType = require("./contact-types");
 
-
-// import android.content.BroadcastReceiver;
-var context = android.content.Context;
-var intent = android.content.Intent;
-var telephonyManager =  android.telephony.TelephonyManager;
-var method = java.lang.reflect.Method;
-
-var itelephony = com.android.internal.telephony.ITelephony;
-
- var telephonyService = new ITelephony();
-
- exports.rejectCall = function(args){
-     return new Promise(function(resolve ,reject){
-          var  tm =  context.getSystemService(Context.TELEPHONY_SERVICE);
-    var m = new method();
-    m = tm.getClass().getDeclaredMethod("getITelephony");
-    m.setAccessible(true);
-    telephonyService = m.invoke(tm);
-    telephonyService.endCall();
-    telephonyService.silenceRinger();
-
-     });
-   
-
- }
-
 exports.getCallLog = function (args) {
     return new Promise(function (resolve, reject) {
         var CallLogs = android.provider.CallLog.Calls;
